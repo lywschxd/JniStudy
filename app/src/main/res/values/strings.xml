@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JniStudy</string>
+    <string name="str_print">print</string>
+    <string name="getmsg">getMsg</string>
+    <string name="getattr">getAttr</string>
+    <string name="nativecall">NativeCall</string>
+    <string name="nativecalldiff">NativeCallDiff</string>
+</resources>
