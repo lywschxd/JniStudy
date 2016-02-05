@@ -83,8 +83,10 @@ JNIEXPORT void JNICALL Java_com_dd_jni_StringCommon_callNativeDiffType
     jmethodID setParamId = (*env)->GetMethodID(env, clazz, "setParam", "(IFLjava/lang/String;)V");
     if (type == type0) {
         LOGE("use CallVoidMethod to call Java");
-        (*env)->CallVoidMethod(env, obj, setParamId);
+        (*env)->CallVoidMethod(env, obj, setParamId, p1, p2, p3);
     } else if (type == type1) {
+        LOGE("use CallVoidMethodV to call Java, but not use");
+//        (*env)->CallVoidMethodV(env, obj, setParamId, p1, p2, p3);
     } else if (type == type2) {
         LOGE("use CallVoidMethodA to call Java");
         jvalue args[3];
@@ -93,6 +95,23 @@ JNIEXPORT void JNICALL Java_com_dd_jni_StringCommon_callNativeDiffType
         args[2].l = p3;
         (*env)->CallVoidMethodA(env, obj, setParamId, args);
     }
+}
+
+/*
+ * Class:     com_dd_jni_StringCommon
+ * Method:    callFatherFunction
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_dd_jni_StringCommon_callFatherFunction
+        (JNIEnv *env, jobject obj) {
+    jclass jclazz = (*env)->GetObjectClass(env, obj);
+    jfieldID fatherId = (*env)->GetFieldID(env, jclazz, "father", "Lcom/dd/jni/Father;");
+    jobject fatherField = (*env)->GetObjectField(env, obj, fatherId);
+
+    jclass fatherClass = (*env)->FindClass(env, "com/dd/jni/Father");
+    jmethodID  father_function_id = (*env)->GetMethodID(env, fatherClass, "function", "()V");
+    (*env)->CallVoidMethod(env, fatherField, father_function_id);
+    (*env)->CallNonvirtualVoidMethod(env, fatherField, fatherClass, father_function_id);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {

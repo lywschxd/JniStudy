@@ -53,6 +53,14 @@ JNIEXPORT void JNICALL Java_com_dd_jni_StringCommon_callNativeSetCount
 JNIEXPORT void JNICALL Java_com_dd_jni_StringCommon_callNativeDiffType
   (JNIEnv *, jobject, jint, jfloat, jstring, jint);
 
+/*
+ * Class:     com_dd_jni_StringCommon
+ * Method:    callFatherFunction
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_dd_jni_StringCommon_callFatherFunction
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

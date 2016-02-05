@@ -46,4 +46,15 @@
             android:text="@string/nativecalldiff"
             android:onClick="CallFunctionDiffType"/>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/super_method"
+        android:layout_below="@id/native_call_java"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/superclass"
+            android:onClick="CallSuperFunction"/>
+    </LinearLayout>
 </RelativeLayout>

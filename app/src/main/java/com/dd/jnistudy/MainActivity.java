@@ -42,4 +42,9 @@ public class MainActivity extends Activity {
         common.callNativeDiffType(20, 2.3f, "Hello", StringCommon.JNI_METHOD_TYPE_2);
         Log.e(TAG, common.toString());
     }
+
+    public void CallSuperFunction(View v) {
+        common.callFatherFunction();
+    }
+
 }

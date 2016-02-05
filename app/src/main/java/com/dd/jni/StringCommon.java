@@ -16,6 +16,7 @@ public class StringCommon {
     private int param1 = 1;
     private float param2 = 2.0f;
     private String param3 = "common";
+    private Father father = new Child();
 
     public int getCount() {
         return count;
@@ -42,4 +43,5 @@ public class StringCommon {
     public native void setNativeCount();
     public native void callNativeSetCount(int count);
     public native void callNativeDiffType(int p1, float p2, String p3, int type);
+    public native void callFatherFunction();
 }

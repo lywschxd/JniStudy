@@ -5,4 +5,5 @@
     <string name="getattr">getAttr</string>
     <string name="nativecall">NativeCall</string>
     <string name="nativecalldiff">NativeCallDiff</string>
+    <string name="superclass">superClass</string>
 </resources>
